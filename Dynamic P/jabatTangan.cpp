@@ -11,16 +11,16 @@ void solve()
         cout << 1;
     else
     {
-        int dp[n + 1] = {0};
+        ll dp[n + 1] = {0};
         dp[0] = 1;
         dp[2] = 1;
 
         for (int i = 4; i <= n; i += 2)
         {
-            int sum = 0;
+            ll sum = 0;
             for (int j = 2; j <= i; j += 2)
             {
-                sum += dp[j - 2] * dp[n - j];
+                sum += dp[j - 2] * dp[i - j];
             }
             dp[i] = sum;
         }
